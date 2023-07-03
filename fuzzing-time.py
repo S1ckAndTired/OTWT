@@ -35,11 +35,18 @@ def blah():
         else:
             print("NOT READY YET!! NOT SURE WHAT THIS IS FOR!")
     else:
-        proxies = {"http": f"{proxy}"}
-        if data:
-            iterator(target, headers, wordlist, data, proxies, filter_error, filter_size, delay)
+        if target.startswith("https://"):
+            proxies = {"https": f"{proxy}"}
+            if data:
+                iterator(target, headers, wordlist, data, proxies, filter_error, filter_size, delay)
+            else:
+                print("NOT READY YET!! ONLY POST REQUESTS SUPPORTED!")
         else:
-            print("NOT READY YET!! ONLY POST REQUESTS SUPPORTED!")
+            proxies = {"http": f"{proxy}"}
+            if data:
+                iterator(target, headers, wordlist, data, proxies, filter_error, filter_size, delay)
+            else:
+                print("NOT READY YET!! ONLY POST REQUESTS SUPPORTED!")
 
 
 
