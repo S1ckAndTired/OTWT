@@ -26,7 +26,9 @@ ________________________________________________________________________________
       -d , -data 
 
 _____________________________________________________________________________________________________________________
-##### Sure thing I will upgrade it so it supports `PUT` requests. In order to suply data `json` just suply it as `urlencoded` (e.g { "username": "admin" } - username=admin) 
+##### Sure thing I will upgrade it so it supports `PUT` requests. 
+
+##### Now `json` body can be supplied how it should always have been. To you help, if you got a large `json` data and want it in one line so you can feed the tool jus `echo 'json-data' | jq . -c`
 
 ##### :warning: Disclaimer! - Only use it under prior authorization of the target. I do not take any responsibility for its use. :warning:
 
