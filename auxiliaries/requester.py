@@ -13,7 +13,7 @@ disable_warnings()
 
 
 
-def issuer(target, body, fuzz, proxies, filter_error, filter_size, delay):
+def issuer(target, body, fuzz, proxies, filter_error, filter_size, delay, rate):
     start = perf_counter()
     r = requests.post(target, data=body, headers=custom_headers, proxies=proxies, verify=False)
     end = perf_counter()
@@ -23,7 +23,7 @@ def issuer(target, body, fuzz, proxies, filter_error, filter_size, delay):
         sleep(int(delay))
     else:
         pass
-    if str(filter_error) in r.text:
+    if str(rate) in r.text:
         print("[!] Rate limiting detected")
         if fuzz not in tmp_saver:
             tmp_saver.append(fuzz)
