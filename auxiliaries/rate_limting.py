@@ -9,7 +9,7 @@ from time import sleep
 
 
 
-def time_slip(target, data, fuzz, proxies, filter_error, filter_size, delay):    
+def time_slip(target, data, fuzz, proxies, filter_error, filter_size, delay, rate):    
     print(f"[*] Remaining requests gonna take 30 seconds each")
     for fuzx in tmp_saver:
         remaining_data = data.replace(last_word[0], fuzx)
